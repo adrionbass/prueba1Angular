@@ -1,5 +1,5 @@
 var app = angular.module("app", []);
-//mi primera app en Angular
+//Mi primera app en Angular
 app.controller("controlador", function($scope){
     var lista = this;
     var n = 2;
