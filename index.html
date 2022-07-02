@@ -10,17 +10,21 @@
     <title>Document</title>
 </head>
 <body ng-controller="controlador as lista">
+
+<div id="menu">
+    <ul>
+        <li><a href="#/">Cajero</a></li>
+            <li><a href="#productos">Productos</a></li>
+    </ul>
+</div>
+
     <!--Práctica de primera app en Angular-->
-    <input type="text" ng-model="lista.nombre">
+
+<!--     <input type="text" ng-model="lista.nombre">
     <input type="text" ng-model="lista.precio">
-    <input type="button" value="Añadir" ng-click="lista.addProducto()">
+    <input type="button" value="Añadir" ng-click="lista.addProducto()"> -->
 
-    <select name="" id="" ng-model="lista.productoSeleccionado">
-        <option ng-repeat="producto in lista.productos" value="{{producto.id}}">{{producto.nombre}}</option>
-    </select>
+    <div ng-view></div>
 
-    <li ng-repeat="producto in lista.productos">
-        {{producto.nombre}}
-    </li>
 </body>
 </html>

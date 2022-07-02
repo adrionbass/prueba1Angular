@@ -1,5 +1,18 @@
-var app = angular.module("app", []);
+var app = angular.module("app", ["ngRoute"]);
 //Mi primera app en Angular
+
+app.config(function($routeProvider){
+    $routeProvider
+    .when("/", {
+        templateUrl: "cajero.html",
+        controller: "controlador"
+    })
+    .when("/productos", {
+        templateUrl: "productos.html",
+        controller: "controlador"
+    });
+});
+
 app.controller("controlador", function($scope){
     var lista = this;
     var n = 2;
@@ -22,26 +35,26 @@ app.controller("controlador", function($scope){
         }
 
         lista.addAlCarrito = function(){
-            var n = 1;
-            var id = lista.productoSeleccionado;
+            alert('Click')
+/*             var id = lista.productoSeleccionado;
             var cantidad = lista.cantidad;
             var producto = lista.productos.find(function(obj){
                 return obj.id == id;
-            });
+            }); */
 
-            if(producto != undefined && cantidad > 0){
+/*             if(producto != undefined && cantidad > 0){
                 lista.carrito.push({id: nCarrito, nombre: producto.nombre, precio: producto.precio, cantidad: cantidad, total: producto.precio * cantidad});
                 nCarrito++;
-            }
+            } */
 
         }
 
-        lista.getTotalCarrito = function(){
+/*         lista.getTotalCarrito = function(){
             var total = 0;
             lista.carrito.forEach(x=>{
                 total += x.total;
             });
-        }
+        } */
 
         }
 });
